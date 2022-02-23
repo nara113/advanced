@@ -5,9 +5,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class LogTraceImplTest {
+class ThreadLocalLogTraceTest {
 
-    LogTrace logTrace = new LogTraceImpl();
+    private LogTrace logTrace = new ThreadLocalLogTrace();
 
     @Test
     void begin_end_level2() {

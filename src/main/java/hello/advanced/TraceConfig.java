@@ -1,7 +1,7 @@
 package hello.advanced;
 
 import hello.advanced.trace.logtrace.LogTrace;
-import hello.advanced.trace.logtrace.LogTraceImpl;
+import hello.advanced.trace.logtrace.FieldLogTrace;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -9,6 +9,6 @@ import org.springframework.context.annotation.Configuration;
 public class TraceConfig {
     @Bean
     LogTrace logTrace() {
-        return new LogTraceImpl();
+        return new FieldLogTrace();
     }
 }
