@@ -11,5 +11,5 @@ public abstract class AbstractTemplate {
         log.info("result time : {}", endTime - startTime);
     }
 
-    abstract void call();
+    protected abstract void call();
 }
