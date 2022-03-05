@@ -11,25 +11,26 @@ import org.junit.jupiter.api.Test;
 class ContextTestV2 {
     @Test
     void strategyV2_1() {
+        ContextV2 contextV2 = new ContextV2();
+
         Strategy strategy1 = new StrategyLogic1();
-        ContextV2 contextV2_1 = new ContextV2();
-        contextV2_1.execute(strategy1);
+        contextV2.execute(strategy1);
 
         Strategy strategy2 = new StrategyLogic2();
-        ContextV2 contextV2_2 = new ContextV2();
-        contextV2_2.execute(strategy2);
+        contextV2.execute(strategy2);
     }
 
     @Test
     void strategyV2_2() {
+        ContextV2 contextV2 = new ContextV2();
+
         Strategy strategy1 = new Strategy() {
             @Override
             public void call() {
                 log.info("logic 1");
             }
         };
-        ContextV2 contextV2_1 = new ContextV2();
-        contextV2_1.execute(strategy1);
+        contextV2.execute(strategy1);
 
         Strategy strategy2 = new Strategy() {
             @Override
@@ -37,16 +38,13 @@ class ContextTestV2 {
                 log.info("logic 2");
             }
         };
-        ContextV2 contextV2_2 = new ContextV2();
-        contextV2_2.execute(strategy2);
+        contextV2.execute(strategy2);
     }
 
     @Test
     void strategyV3() {
-        ContextV2 contextV2_1 = new ContextV2();
-        contextV2_1.execute(() -> log.info("logic 1"));
-
-        ContextV2 contextV2_2 = new ContextV2();
-        contextV2_2.execute(() -> log.info("logic 2"));
+        ContextV2 contextV2 = new ContextV2();
+        contextV2.execute(() -> log.info("logic 1"));
+        contextV2.execute(() -> log.info("logic 2"));
     }
 }
